@@ -1,0 +1,108 @@
+if identifyexecutor() == 'Delta' then
+    local ScreenGui = Instance.new("ScreenGui")
+    ScreenGui.Name = "DeltaBlockerGui"
+    ScreenGui.Parent = game:GetService("CoreGui")
+
+    local Frame = Instance.new("Frame")
+    Frame.Size = UDim2.new(0, 450, 0, 300)
+    Frame.Position = UDim2.new(0.5, -225, 0.5, -150)
+    Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    Frame.BackgroundTransparency = 0.3
+    Frame.BorderSizePixel = 0
+    Frame.Parent = ScreenGui
+    Instance.new("UICorner", Frame).CornerRadius = UDim.new(0, 10)
+
+    -- Close Button (Red X)
+    local CloseBtn = Instance.new("TextButton")
+    CloseBtn.Size = UDim2.new(0, 25, 0, 25)
+    CloseBtn.Position = UDim2.new(1, -30, 0, 5)
+    CloseBtn.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+    CloseBtn.Text = "X"
+    CloseBtn.Font = Enum.Font.SourceSansBold
+    CloseBtn.TextColor3 = Color3.new(1, 1, 1)
+    CloseBtn.TextScaled = true
+    CloseBtn.Parent = Frame
+    Instance.new("UICorner", CloseBtn)
+
+    CloseBtn.MouseButton1Click:Connect(function()
+        ScreenGui:Destroy()
+    end)
+
+    -- Title
+    local Title = Instance.new("TextLabel")
+    Title.Size = UDim2.new(1, 0, 0, 30)
+    Title.Position = UDim2.new(0, 0, 0, 5)
+    Title.BackgroundTransparency = 1
+    Title.Text = "ERROR Message"
+    Title.TextColor3 = Color3.fromRGB(255, 0, 0)
+    Title.Font = Enum.Font.SourceSansBold
+    Title.TextScaled = true
+    Title.Parent = Frame
+
+    -- Subtitle
+    local Subtitle = Instance.new("TextLabel")
+    Subtitle.Size = UDim2.new(1, -20, 0, 25)
+    Subtitle.Position = UDim2.new(0, 10, 0, 40)
+    Subtitle.BackgroundTransparency = 1
+    Subtitle.Text = "Delta Executor Detected"
+    Subtitle.TextColor3 = Color3.fromRGB(255, 255, 0)
+    Subtitle.Font = Enum.Font.SourceSansBold
+    Subtitle.TextScaled = true
+    Subtitle.Parent = Frame
+
+    -- Paragraph Message
+    local Paragraph = Instance.new("TextLabel")
+    Paragraph.Size = UDim2.new(1, -30, 0, 70)
+    Paragraph.Position = UDim2.new(0, 15, 0, 70)
+    Paragraph.BackgroundTransparency = 1
+    Paragraph.TextWrapped = true
+    Paragraph.Text = "If you're seeing this, it means your executor is blocked by this script because Delta doesn't support it at the moment."
+    Paragraph.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Paragraph.Font = Enum.Font.SourceSans
+    Paragraph.TextScaled = true
+    Paragraph.Parent = Frame
+
+    -- Fix Instructions (Now regular font and clearly visible)
+    local Instructions = Instance.new("TextLabel")
+    Instructions.Size = UDim2.new(1, -30, 0, 60)
+    Instructions.Position = UDim2.new(0, 15, 0, 150)
+    Instructions.BackgroundTransparency = 1
+    Instructions.TextWrapped = true
+    Instructions.Text = "To fix this:\n- Turn off anti-scam setting in Delta\n- Or use a different executor like Krnl or Codex"
+    Instructions.TextColor3 = Color3.fromRGB(200, 200, 200)
+    Instructions.Font = Enum.Font.SourceSans
+    Instructions.TextScaled = true
+    Instructions.Parent = Frame
+
+    -- Krnl Button
+    local KrnlBtn = Instance.new("TextButton")
+    KrnlBtn.Size = UDim2.new(0.4, 0, 0, 35)
+    KrnlBtn.Position = UDim2.new(0.05, 0, 1, -45)
+    KrnlBtn.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+    KrnlBtn.Text = "Copy Krnl Link"
+    KrnlBtn.Font = Enum.Font.SourceSansBold
+    KrnlBtn.TextColor3 = Color3.new(1, 1, 1)
+    KrnlBtn.TextScaled = true
+    KrnlBtn.Parent = Frame
+    Instance.new("UICorner", KrnlBtn)
+
+    KrnlBtn.MouseButton1Click:Connect(function()
+        setclipboard("https://krnl.webfiles.pro/android.html")
+    end)
+
+    -- Codex Button
+    local CodexBtn = Instance.new("TextButton")
+    CodexBtn.Size = UDim2.new(0.4, 0, 0, 35)
+    CodexBtn.Position = UDim2.new(0.55, 0, 1, -45)
+    CodexBtn.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+    CodexBtn.Text = "Copy Codex Link"
+    CodexBtn.Font = Enum.Font.SourceSansBold
+    CodexBtn.TextColor3 = Color3.new(1, 1, 1)
+    CodexBtn.TextScaled = true
+    CodexBtn.Parent = Frame
+    Instance.new("UICorner", CodexBtn)
+
+    CodexBtn.MouseButton1Click:Connect(function()
+        setclipboard("https://www.mediafire.com/file/nlm86ppvpds7yad/Codex__v2.680.apk/file")
+    end)
+end
